@@ -1,0 +1,133 @@
+@import './global.less';
+
+.order {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: @bg-color;
+  overflow-y: auto;
+  padding-top: 45px;
+  padding-bottom: 20px;
+  // 顶部标题栏
+  .top-title {
+    // 修改 vant样式
+    .van-hairline--bottom {
+      height: 44px;
+      border-bottom: 1px solid #F9F9F9;
+    }
+    .van-nav-bar__arrow {
+      color: #5E606B;
+      font-size: 20px;
+    }
+    .van-ellipsis {
+      font-size: 16px;
+      color: #333;
+    }
+  }
+
+  // 跳转选项栏
+ .my-section {
+    position: absolute;
+    top: 53px;
+    right: 10px;
+    z-index: 1000;
+    border-radius: 4px;
+    width: 125px;
+    background: rgba(0,0,0,.9);
+  }
+
+  // 标签页
+  .order-tabs {
+    .van-tab--active {
+      color: @color;
+    }
+    .van-tabs__line {
+      background-color: @color;
+    }
+    
+    // 订单列表
+    .tabs-list {
+      .tabs-item {
+        margin: 15px;
+        width: calc(~"100% - 30px");
+        background-color: #fff;
+        border-radius: 5px;
+        .item-top {
+          margin: 0 15px;
+          padding: 15px 0 10px;
+          border-bottom: 1px solid #e5e5e5;
+          .top-no {
+            font-size: 12px;
+            color: #555;
+          }
+          .top-chose {
+            font-size: 12px;
+            color: #999;
+            .del-icon {
+              height: 16px;
+              margin-left: 2px;
+            }
+            .van-icon-delete::before {
+              font-size: 14px;
+              line-height: 16px;
+            }
+          }
+        }
+        .item-middle {
+          padding: 15px 15px 0;
+          position: relative;
+          .middle-img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #efefef;
+          }
+          .middle-text {
+            width: calc(~"100% - 92px");
+            margin-left: 10px;
+            .text-title {
+              font-size: 13px;
+              color: #333;
+            }
+            .text-sku {
+              font-size: 12px;
+              color: #999;
+              margin-top: 2px;
+            }
+            .text-price {
+              width: calc(~"100% - 122px");
+              height: 20px;
+              line-height: 20px;
+              position: absolute;
+              bottom: 0;
+              .price-num {
+                font-size: 14px;
+                color: @color;
+              }
+              .price-count {
+                font-size: 12px;
+                color: #999;
+              }
+            }
+          }
+        }
+        .item-bottom {
+          height: 20px;
+          line-height: 20px;
+          padding: 10px 0;
+          font-size: 12px;
+          color: #999;
+          margin-top: 5px;
+          .bottom-date {
+            margin-left: 15px;
+          }
+          .bottom-price {
+            margin-right: 15px;
+            font-size: 16px;
+            color: @color;
+          }
+        }
+      }
+    }
+  }
+}

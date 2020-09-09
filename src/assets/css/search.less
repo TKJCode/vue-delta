@@ -1,0 +1,123 @@
+@import './global.less';
+
+.search {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+
+  // 顶部搜索栏
+  .top-nav {
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid #E0E0E0;
+    .vanRow {
+      background-color: #fff;
+      height: 100%;
+      .vanCol-icon {
+        height: 100%;
+        text-align: center;
+        padding-top: 12px;
+      }
+      .vanCol-text {
+        text-align: center;
+        line-height: 44px;
+        font-size: 14px;
+        color: @color;
+      }
+    }
+
+    // 修改 vant样式
+    .van-search {
+      background-color: #fff;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .van-search__action {
+      display: none;
+    }
+    .van-search__content {
+      border-radius: 20px;
+      background-color: #EEEEEE;
+    }
+    .van-search__label {
+      color: @color;
+    }
+    .van-search__content--square {
+      height: 29px;
+    }
+    .van-search--show-action {
+      margin-top: 7.5px;
+    }
+    .van-search__label {
+      line-height: 31px;
+    }
+    .van-field__control {
+      line-height: 20px;
+    }
+    .van-field {
+      .van-icon {
+        line-height: 20px;
+      }
+    }
+  }
+
+  // 搜索栏
+  .search-box {
+    margin-top: 10px;
+    .search-title {
+      padding: 0 10px;
+      .search-hot {
+        font-size: 12px;
+        color: #333;
+      }
+      .title-right {
+        font-size: 12px;
+        color: #3985ff;
+        .search-hide {
+          margin-right: 10px;
+        }
+      }
+    }
+    .search-list {
+      padding: 30px 0 10px 0;
+      margin: 0 10px;
+      width: calc(~"100% - 20px");
+      border-bottom: 1px solid #EFEFEF;
+      .search-item {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        background-color: #efefef;
+        color: #666;
+        padding: 0 5px;
+        margin: 0 10px 10px 0;
+        &:first-of-type,
+        &:nth-of-type(2) {
+          color: @color;
+          background-color: #fdf0f0;
+        }
+        .search-icon {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin-right: 3px;
+          margin-left: 2px;
+        }
+      }
+    }
+    .search-empty {
+      text-align: center;
+      margin: 0 10px;
+      height: 30px;
+      line-height: 30px;
+      padding: 65px 0 65px;
+      border-bottom: 1px solid #EFEFEF;
+      color: #999;
+    }
+  }
+
+}

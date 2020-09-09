@@ -1,0 +1,80 @@
+@import './global.less';
+
+.myAddress {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: @bg-color;
+  overflow-y: auto;
+  padding-top: 45px;
+  // 顶部标题栏
+  .top-title {
+    // 修改 vant样式
+    .van-hairline--bottom {
+      height: 44px;
+      border-bottom: 1px solid #F9F9F9;
+    }
+    .van-nav-bar__arrow {
+      color: #5E606B;
+      font-size: 20px;
+    }
+    .van-ellipsis {
+      font-size: 16px;
+      color: #333;
+    }
+  }
+
+  // 地址列表栏
+  .address-list {
+    .van-address-item .van-radio__icon--checked .van-icon,
+    .van-button--danger {
+      background-color: @color;
+      border-color: @color
+    }
+    .van-tag--danger {
+      background-color: @color;
+    }
+    .van-radio__icon--round {
+      display: none;
+    }
+    .van-address-item__name {
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
+    .van-address-item__address {
+      font-size: 14px;
+      color: #666;
+    }
+    .address-tags {
+      margin: 10px 0 0 12px;
+      font-size: 12px;
+      height: 17px;
+      line-height: 17px;
+      color: #999;
+      .tags-text {
+        display: inline-block;
+        position: relative;
+        padding: 0 4px;
+        vertical-align: middle;
+        margin: -2px 5px 0 0;
+        height: 17px;
+        line-height: 17px;
+        color: #4b9bfb;
+        &::after {
+          border-radius: 4px;
+          content: "";
+          display: block;
+          border: 1px solid #4b9bfb;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

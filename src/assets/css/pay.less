@@ -1,0 +1,319 @@
+@import './global.less';
+
+.pay {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: @bg-color;
+  overflow-y: auto;
+  padding-top: 45px;
+  padding-bottom: 60px;
+  // 顶部标题栏
+  .top-title {
+    // 修改 vant样式
+    .van-hairline--bottom {
+      height: 44px;
+      border-bottom: 1px solid #F9F9F9;
+    }
+    .van-nav-bar__arrow {
+      color: #5E606B;
+      font-size: 20px;
+    }
+    .van-ellipsis {
+      font-size: 16px;
+      color: #333;
+    }
+  }
+
+  // 跳转选项栏
+ .my-section {
+    position: absolute;
+    top: 53px;
+    right: 10px;
+    z-index: 1000;
+    border-radius: 4px;
+    width: 125px;
+    background: rgba(0,0,0,.9);
+  }
+
+  // 添加收货地址
+  .fixed {
+    height: 51px;
+  }
+  .fixed-active {
+    height: 73px;
+  }
+  .pay-address {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    .van-cell {
+      padding: 12px 10px 16px;
+      background: #fff url(../../assets/images/address_bg.png) -7px bottom repeat-x;
+      background-size: 64px 5px;
+      .van-cell__title {
+        margin-left: 5px;
+        span {
+          color: #333;
+        }
+      }
+    }
+    .user-name,
+    .user-tel {
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .user-name {
+      margin-right: 5px;
+    }
+    .user-address {
+      font-size: 14px;
+      color: #666;
+      width: calc(~"100% - 25px");
+    }
+  }
+
+  // 订单商品栏
+  .pay-goods {
+    width: calc(~"100% - 20px");
+    margin: 15px 0;
+    padding: 0 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    .goods-top {
+      height: 40px;
+      border-bottom: 1px solid #F6F6F6;
+      .van-icon-shop-o::before {
+        margin-top: 10px;
+      }
+    }
+    .goods-middle {
+      width: 100%;
+      padding-top: 15px;
+      .middle-img {
+        width: 75px;
+        height: 75px;
+      }
+      .middle-text {
+        margin-left: 10px;
+        width: calc(~"100% - 85px");
+        .text-title {
+          margin-bottom: 5px;
+          color: #333;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        .text-sku {
+          margin-bottom: 6px;
+          font-size: 12px;
+          color: #999;
+          line-height: 1;
+        }
+        .text-p {
+          height: 30px;
+          line-height: 30px;
+          .text-price {
+            color: @color;
+            .price-small {
+              font-size: 10px;
+            }
+            .price-big {
+              font-size: 16px;
+            }
+          }
+          .text-count {
+            color: #999;
+            font-size: 12px;
+          }
+        }
+        .text-info {
+          padding: 6px 0;
+          border-bottom: 1px solid #F6F6F6;
+          .info-returned,
+          .info-explain {
+            margin-right: 5px;
+            .info-img {
+              display: inline-block;
+              width: 15px;
+              height: 15px;
+              margin: -2px 2px 0 0;
+              vertical-align: middle;
+            }
+            .info-txt {
+              display: inline-block;
+              color: #999;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .goods-bottom {
+      width: 100%;
+      .bottom-txt {
+        width: calc(~"100% - 28px");
+        padding: 10px 10px 10px 0;
+        .bottom-title {
+          margin: 5px 0;
+          color: #333;
+          height: 17.6px;
+          line-height: 17.6px;
+          .title-left {
+            font-size: 16px;
+          }
+          .title-right {
+            font-size: 12px;
+          }
+        }
+        .bottom-text {
+          height: 17.6px;
+          line-height: 17.6px;
+          color: #999;
+          font-size: 12px;
+        }
+      }
+      .bottom-icon {
+        width: 18px;
+        height: 65px;
+        line-height: 65px;
+        text-align: right;
+        .van-icon {
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+
+  // 商品金额栏
+  .pay-money {
+    width: calc(~"100% - 20px");
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    .money-num {
+      font-size: 14px;
+      padding-bottom: 5px;
+      .money-goods {
+        padding-bottom: 5px;
+        .money-goods-text {
+          color: #333;
+        }
+        .money-goods-num {
+          color: @color;
+        }
+      }
+    }
+    .money-amount {
+      margin-bottom: 20px;
+      font-size: 16px;
+      .amount-text {
+        font-weight: 700;
+        color: #333;
+      }
+      .amount-num {
+        color: @color;
+      }
+    }
+    .money-btn {
+      .van-button--round {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+    .money-info {
+      margin: 20px 0 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #F0F0F0;
+      .info-txt {
+        text-align: center;
+        color: #999;
+        &::before,
+        &::after {
+          content: "";
+          height: 1px;
+          width: 15px;
+          background: #ddd;
+          display: inline-block;
+          vertical-align: middle;
+          margin: -2px 5px 0;
+        }
+      }
+    }
+    .money-delivery {
+      padding-top: 10px;
+      .delivery-icon {
+        width: 40px;
+        height: 40px;
+      }
+      .delivery-text {
+        height: 40px;
+        margin-left: 5px;
+        line-height: 20px;
+        .delivery-title {
+          color: #333;
+          font-size: 14px;
+        }
+        .delivery-content {
+          color: #999;
+          font-size: 10px;
+        }
+      }
+      .delivery-right {
+        height: 40px;
+        line-height: 40px;
+        text-align: right;
+        .van-icon {
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+
+  // 选择地址弹出层
+  .pay-choose {
+    .pay-popup {
+      min-height: 300px;
+      max-height: 450px;
+      padding-top: 10px;
+    }
+    .van-button--danger {
+      background-color: @color;
+      border-color: @color;
+    }
+    .van-address-item__edit {
+      display: none;
+    }
+    .van-address-item .van-radio__icon--checked .van-icon {
+      background-color: @color;
+      border-color: @color;
+    }
+    .van-tag--danger {
+      background-color: @color;
+    }
+    .van-address-item__value {
+      padding-right: 0;
+    }
+    .van-address-item__name {
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
+    .van-address-item__address {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+}
+
+// 修改"价格说明"弹出框样式
+.van-dialog__message--has-title {
+  color: #999;
+  font-size: 12px;
+}
+.van-dialog__header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F5F6F7;
+}

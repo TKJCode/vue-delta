@@ -1,0 +1,124 @@
+@import './global.less';
+
+.newAddress {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: @bg-color;
+  overflow-y: auto;
+  padding-top: 45px;
+  // 顶部标题栏
+  .top-title {
+    // 修改 vant样式
+    .van-hairline--bottom {
+      height: 44px;
+      border-bottom: 1px solid #F9F9F9;
+    }
+    .van-nav-bar__arrow {
+      color: #5E606B;
+      font-size: 20px;
+    }
+    .van-ellipsis {
+      font-size: 16px;
+      color: #333;
+    }
+  }
+
+  // 地址编辑栏
+  .address-edit {
+    .van-switch--on {
+      background-color: @color;
+    }
+    .van-button--danger {
+      background-color: @color;
+      border-color: @color;
+      font-size: 16px;
+    }
+    .address-tag {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      margin: 5px 10px 5px 0;
+      padding: 0 15px;
+      height: 30px;
+      max-width: 150px;
+      vertical-align: top;
+      line-height: 30px;
+      font-size: 14px;
+      color: #999;
+      background-color: #fff;
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        background-color: #ccc;
+        border: 1px solid #ddd;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: none;
+        border-color: #ccc;
+        border-radius: 30px;
+        border-width: 1.5px;
+      }
+      &.cur {
+        color: #6a77b6;
+      }
+      &.cur::after {
+        border-color: #6a77b6;
+      }
+      .tag-add {
+        display: inline-block;
+        margin: -2px 0 0 2px;
+        width: 15px;
+        height: 15px;
+        vertical-align: middle;
+        border-radius: 15px;
+        background: url(../images/add_icon.png);
+        background-size: 15px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    .address-tag-edit {
+      display: inline-block;
+      margin: 5px 0 5px -5px;
+      width: 30px;
+      height: 30px;
+      vertical-align: top;
+      border-radius: 3px;
+      background: #6a77b6 url(../images/edit_icon.png) no-repeat 50%;
+      background-size: 14px;
+    }
+  }
+
+  // "自定义标签名称"弹出框
+  .van-dialog__header {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #F6F6F6;
+  }
+  .van-dialog__confirm, .van-dialog__confirm:active {
+    color: @color;
+  }
+  .dialog {
+    padding: 20px;
+    text-align: center;
+    .dialog-input {
+      box-sizing: border-box;
+      padding: 0 10px;
+      width: 100%;
+      height: 44px;
+      border: none;
+      -webkit-appearance: none;
+      line-height: 44px;
+      font-size: 14px;
+      background-color: #f7f7f7;
+    }
+    .dialog-input::-webkit-input-placeholder {
+      color: #ccc;
+    }
+  }
+}

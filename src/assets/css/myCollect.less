@@ -1,0 +1,149 @@
+@import './global.less';
+
+.myCollect {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #F7F7F7;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 45px;
+  padding-bottom: 20px;
+
+  // 顶部标题栏
+  .top-title {
+    position: sticky;
+    z-index: 10;
+    // 修改 vant样式
+    .van-hairline--bottom {
+      height: 44px;
+      border-bottom: 1px solid #F9F9F9;
+    }
+    .van-nav-bar__arrow {
+      color: #5E606B;
+      font-size: 20px;
+    }
+    .van-ellipsis {
+      font-size: 16px;
+      color: #333;
+    }
+  }
+
+  // 跳转选项栏
+ .my-section {
+   position: absolute;
+   top: 53px;
+   right: 10px;
+   z-index: 1000;
+   border-radius: 4px;
+   width: 125px;
+   background: rgba(0,0,0,.9);
+ }
+
+  // 编辑栏
+  .collect-edit {
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+    font-size: 12px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #f7f7f7;
+    .edit-num {
+      .num-ch {
+        margin: 0 5px;
+        color: @color;
+      }
+    }
+    .edit-text {
+      color: @color;
+    }
+  }
+
+  // 收藏商品栏
+  .collect-goods {
+    width: 100%;
+    .goods-item {
+      width: calc(~"100% - 20px");
+      height: 100px;
+      padding: 10px;
+      background-color: #fff;
+      margin-top: 10px;
+      position: relative;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      .goods-checked {
+        width: 44px;
+        height: 100px;
+        position: absolute;
+        left: -44px;
+        top: 10px;
+        .van-checkbox__icon {
+          margin-left: 12px;
+          margin-top: 40px;
+        }
+      }
+      .goods-left {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        position: absolute;
+        left: 10px;
+      }
+      .goods-right {
+        width: calc(~"100% - 120px");
+        height: 100px;
+        position: absolute;
+        left: 120px;
+        .right-title {
+          width: calc(~"100% - 20px");
+          font-size: 14px;
+          color: #333;
+        }
+        .right-sku {
+          height: 25px;
+          font-size: 12px;
+          color: #999;
+          line-height: 25px;
+        }
+        .right-price {
+          color: @color;
+          position: absolute;
+          bottom: 0;
+          .price-sm {
+            font-size: 10px;
+          }
+          .price-big {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  // 底部全选栏
+  .collect-bottom {
+    .van-submit-bar {
+      border-top: 1px solid #ededed;
+    }
+    .van-submit-bar__button--danger {
+      margin-left: 180px;
+      border-radius: 0;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      background: @color;
+    }
+  }
+  
+  .van-checkbox__icon--checked .van-icon {
+    background-color: @color;
+    border-color: @color;
+  }
+}
